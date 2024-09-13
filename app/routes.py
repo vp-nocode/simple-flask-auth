@@ -45,6 +45,9 @@ def login():
             return redirect(url_for('home'))
         else:
             flash('Incorrect data entered', 'danger')
+    else:
+        if not form.email.data is None:
+            flash('Incorrect data entered', 'danger')
 
     return render_template('login.html', form=form)
 
